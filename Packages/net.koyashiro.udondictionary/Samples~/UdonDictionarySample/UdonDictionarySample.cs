@@ -1,10 +1,3 @@
-# UdonDictionary
-
-Dictionary implementation for UdonSharp.
-
-## Example
-
-```cs
 using UdonSharp;
 using UnityEngine;
 using Koyashiro.UdonDictionary;
@@ -24,4 +17,3 @@ public class UdonDictionarySample : UdonSharpBehaviour
         Debug.Log(dic.GetValue("third")); // 3
     }
 }
-```

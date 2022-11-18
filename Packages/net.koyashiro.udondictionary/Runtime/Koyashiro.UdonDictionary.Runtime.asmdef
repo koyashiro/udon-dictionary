@@ -1,0 +1,16 @@
+{
+    "name": "Koyashiro.UdonDictionary.Runtime",
+    "references": [
+        "UdonSharp.Runtime",
+        "Koyashiro.UdonList.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
