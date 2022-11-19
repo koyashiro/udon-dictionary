@@ -17,15 +17,16 @@
     "type": "git",
     "url": "https://github.com/koyashiro/udon-dictionary"
   },
-  "vpmDependencies": {
-    "com.vrchat.udonsharp": "1.1.5",
-    "net.koyashiro.udonlist": "0.2.1"
-  },
   "samples": [
     {
       "displayName": "UdonDictionarySample",
       "description": "Sample of UdonDictionary",
       "path": "samples~/UdonDictionarySample"
     }
-  ]
+  ],
+  "url": "https://github.com/koyashiro/udon-json/releases/download/v0.1.0/net.koyashiro.udondictionary-0.1.0.zip",
+  "vpmDependencies": {
+    "com.vrchat.udonsharp": "1.1.5",
+    "net.koyashiro.udonlist": "0.2.1"
+  }
 }
