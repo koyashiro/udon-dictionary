@@ -122,35 +122,9 @@ namespace Koyashiro.UdonDictionary
             return -1;
         }
 
-        private static int IndexOfValue(this UdonDictionary dic, object value)
-        {
-            for (var i = 0; i < dic.GetCount(); i++)
-            {
-                var kv = (object[])dic.AsList().GetItem(i);
-                var v = kv[1];
-
-                if (object.Equals(value, v))
-                {
-                    return i;
-                }
-            }
-
-            return -1;
-        }
-
         private static UdonKeyValuePair GetKeyValuePair(this UdonDictionary dic, int index)
         {
             return (UdonKeyValuePair)dic.AsList().GetItem(index);
-        }
-
-        private static object GetKey(this UdonDictionary dic, int index)
-        {
-            return dic.GetKeyValuePair(index).GetKey();
-        }
-
-        private static object GetValue(this UdonDictionary dic, int index)
-        {
-            return dic.GetKeyValuePair(index).GetValue();
         }
 
         private static UdonList AsList(this UdonDictionary dic)
