@@ -4,6 +4,11 @@ namespace Koyashiro.UdonDictionary
 
     public static class UdonDictionaryExt
     {
+        public static object GetKey(this UdonDictionary dic, int index)
+        {
+            return dic.GetKeyValuePair(index).GetKey();
+        }
+
         public static object GetValue(this UdonDictionary dic, object key)
         {
             var index = dic.IndexOfKey(key);
