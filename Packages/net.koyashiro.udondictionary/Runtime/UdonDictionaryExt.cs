@@ -1,5 +1,6 @@
 namespace Koyashiro.UdonDictionary
 {
+    using Koyashiro.UdonException;
     using Koyashiro.UdonList;
 
     public static class UdonDictionaryExt
@@ -33,14 +34,14 @@ namespace Koyashiro.UdonDictionary
             }
         }
 
-        public static int GetCount(this UdonDictionary dic)
+        public static int Count(this UdonDictionary dic)
         {
-            return dic.AsList().GetCount();
+            return dic.AsList().Count();
         }
 
         public static object[] Values(this UdonDictionary dic)
         {
-            var values = new object[dic.AsList().GetCount()];
+            var values = new object[dic.AsList().Count()];
             for (var i = 0; i < values.Length; i++)
             {
                 values[i] = dic.GetKeyValuePair(i).GetValue();
@@ -50,7 +51,7 @@ namespace Koyashiro.UdonDictionary
 
         public static object[] Keys(this UdonDictionary dic)
         {
-            var keys = new object[dic.AsList().GetCount()];
+            var keys = new object[dic.AsList().Count()];
             for (var i = 0; i < keys.Length; i++)
             {
                 keys[i] = dic.GetKeyValuePair(i).GetKey();
@@ -113,7 +114,7 @@ namespace Koyashiro.UdonDictionary
 
         private static int IndexOfKey(this UdonDictionary dic, object key)
         {
-            for (var i = 0; i < dic.GetCount(); i++)
+            for (var i = 0; i < dic.Count(); i++)
             {
                 var kv = (object[])dic.AsList().GetItem(i);
                 var k = kv[0];

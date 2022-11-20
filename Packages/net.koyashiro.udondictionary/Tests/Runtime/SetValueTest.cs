@@ -1,5 +1,5 @@
 using UdonSharp;
-using Koyashiro.UdonList.Tests;
+using Koyashiro.UdonTest;
 
 namespace Koyashiro.UdonDictionary.Tests
 {

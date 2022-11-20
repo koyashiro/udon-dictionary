@@ -2,7 +2,7 @@
     "name": "Koyashiro.UdonDictionary.Tests.Runtime",
     "references": [
         "UdonSharp.Runtime",
-        "Koyashiro.UdonList.Tests.Runtime",
+        "Koyashiro.UdonTest.Runtime",
         "Koyashiro.UdonDictionary.Runtime"
     ],
     "includePlatforms": [],
