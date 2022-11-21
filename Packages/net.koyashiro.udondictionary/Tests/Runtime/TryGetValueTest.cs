@@ -1,8 +1,10 @@
+using UnityEngine;
 using UdonSharp;
 using Koyashiro.UdonTest;
 
 namespace Koyashiro.UdonDictionary.Tests
 {
+    [AddComponentMenu("")]
     public class TryGetValueTest : UdonSharpBehaviour
     {
         public void Start()

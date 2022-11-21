@@ -1,9 +1,11 @@
+using UnityEngine;
 using UdonSharp;
 
 namespace Koyashiro.UdonDictionary
 {
     using Koyashiro.UdonList;
 
+    [AddComponentMenu("")]
     public class UdonDictionary : UdonSharpBehaviour
     {
         public static UdonDictionary New()
