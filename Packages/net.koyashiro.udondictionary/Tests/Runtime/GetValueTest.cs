@@ -9,7 +9,7 @@ namespace Koyashiro.UdonDictionary.Tests
     {
         public void Start()
         {
-            var dic = (UdonDictionary)(object)(new object[] { new object[] { new object[] { "first", 1 }, new object[] { "second", 2 }, new object[] { "third", 3 }, new object[] { "fourth", 4 }, new object[] { "fifth", 5 }, null, null, null }, 5 });
+            var dic = (UdonDictionary)(object)(new object[] { new object[] { "first", 1, "second", 2, "third", 3, "fourth", 4, "fifth", 5 }, 10 });
 
             Assert.Equal(1, dic.GetValue("first"));
             Assert.Equal(2, dic.GetValue("second"));

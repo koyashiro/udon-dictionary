@@ -3,19 +3,17 @@ using UdonSharp;
 
 namespace Koyashiro.UdonDictionary
 {
-    using Koyashiro.UdonList;
-
     [AddComponentMenu("")]
     public class UdonDictionary : UdonSharpBehaviour
     {
         public static UdonDictionary New()
         {
-            return New(0);
+            return (UdonDictionary)(object)Static.UdonDictionary.New();
         }
 
         public static UdonDictionary New(int capacity)
         {
-            return (UdonDictionary)(object)UdonList.New(capacity);
+            return (UdonDictionary)(object)Static.UdonDictionary.New(capacity);
         }
     }
 }
