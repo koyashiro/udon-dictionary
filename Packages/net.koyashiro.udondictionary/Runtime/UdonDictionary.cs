@@ -8,12 +8,12 @@ namespace Koyashiro.UdonDictionary
     {
         public static UdonDictionary New()
         {
-            return (UdonDictionary)(object)Static.UdonDictionary.New();
+            return (UdonDictionary)(object)Core.UdonDictionary.New();
         }
 
         public static UdonDictionary New(int capacity)
         {
-            return (UdonDictionary)(object)Static.UdonDictionary.New(capacity);
+            return (UdonDictionary)(object)Core.UdonDictionary.New(capacity);
         }
     }
 }

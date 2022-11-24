@@ -1,5 +1,4 @@
-
-namespace Koyashiro.UdonDictionary.Static
+namespace Koyashiro.UdonDictionary.Core
 {
     using Koyashiro.UdonException;
     using Koyashiro.UdonList.Core;
@@ -149,7 +148,6 @@ namespace Koyashiro.UdonDictionary.Static
                     return 2 * i;
                 }
             }
-
 
             return -1;
         }
