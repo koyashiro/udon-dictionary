@@ -1,3 +1,5 @@
+using System;
+
 namespace Koyashiro.UdonDictionary.Core
 {
     using Koyashiro.UdonException;
@@ -5,88 +7,103 @@ namespace Koyashiro.UdonDictionary.Core
 
     public static class UdonDictionary
     {
-        public static object[] New()
+        public static object[][] New<TKey, TValue>()
         {
-            return UdonList.New();
+            var keys = UdonList.New<TKey>();
+            var values = UdonList.New<TValue>();
+
+            return new object[2][] { keys, values };
         }
 
-        public static object[] New(int capacity)
+        public static object[][] New<TKey, TValue>(int capacity)
         {
-            return UdonList.New(2 * capacity);
+            var keys = UdonList.New<TKey>(capacity);
+            var values = UdonList.New<TValue>(capacity);
+
+            return new object[2][] { keys, values };
         }
 
-        public static object[] GetKeyValuePair<TKey, TValue>(object[] dic, int index)
-        {
-            var key = UdonList.GetItem<TKey>(dic, 2 * index);
-            var item = UdonList.GetItem<TValue>(dic, 2 * index + 1);
+        //public static object[] GetKeyValuePair<TKey, TValue>(object[][] dic, int index)
+        //{
+        //    var keys = dic[0];
+        //    var values = dic[1];
+        //
+        //    var key = UdonList.GetItem<TKey>(keys, index);
+        //    var item = UdonList.GetItem<TValue>(values, index);
+        //
+        //    return new object[] { key, item };
+        //}
 
-            return new object[] { key, item };
+        public static TKey GetKey<TKey>(object[][] dic, int index)
+        {
+            var keys = dic[0];
+        
+            return UdonList.GetItem<TKey>(keys, index);
         }
 
-        public static TKey GetKey<TKey>(object[] dic, int index)
+        public static TValue GetValue<TKey, TValue>(object[][] dic, TKey key)
         {
-            return UdonList.GetItem<TKey>(dic, 2 * index);
-        }
+            var keys = dic[0];
 
-        public static TValue GetValue<TKey, TValue>(object[] dic, TKey key)
-        {
-            var index = IndexOfKey(dic, key);
+            var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
                 UdonException.ThrowKeyNotFoundException();
             }
 
-            return UdonList.GetItem<TValue>(dic, index + 1);
+            var values = dic[1];
+
+            return UdonList.GetItem<TValue>(values, index);
         }
 
-        public static void SetValue<TKey, TValue>(object[] dic, TKey key, TValue value)
+        public static void SetValue<TKey, TValue>(object[][] dic, TKey key, TValue value)
         {
-            var index = IndexOfKey(dic, key);
+            var keys = dic[0];
+            var values = dic[1];
+
+            var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
-                UdonList.Add(dic, key);
-                UdonList.Add(dic, value);
+                UdonList.Add(keys, key);
+                UdonList.Add(values, value);
             }
             else
             {
-                UdonList.SetItem<TValue>(dic, index + 1, value);
+                UdonList.SetItem(values, index, value);
             }
         }
 
-        public static int Count(object[] dic)
+        public static int Count(object[][] dic)
         {
-            return UdonList.Count(dic) / 2;
+            var keys = dic[0];
+
+            return UdonList.Count(keys);
         }
 
-        public static TValue[] Values<TValue>(object[] dic)
+        public static TKey[] Keys<TKey>(object[][] dic)
         {
-            var count = UdonList.Count(dic) / 2;
-            var values = new TValue[count];
-            for (var i = 0; i < count; i++)
-            {
-                values[i] = UdonList.GetItem<TValue>(dic, 2 * i + 1);
-            }
-            return values;
+            var keys = dic[0];
+
+            return UdonList.ToArray<TKey>(keys);
         }
 
-        public static TKey[] Keys<TKey>(object[] dic)
+        public static TValue[] Values<TValue>(object[][] dic)
         {
-            var count = UdonList.Count(dic) / 2;
-            var keys = new TKey[count];
-            for (var i = 0; i < count; i++)
-            {
-                keys[i] = UdonList.GetItem<TKey>(dic, 2 * i);
-            }
-            return keys;
+            var values = dic[1];
+
+            return UdonList.ToArray<TValue>(values);
         }
 
-        public static void Add<TKey, TValue>(object[] dic, TKey key, TValue value)
+        public static void Add<TKey, TValue>(object[][] dic, TKey key, TValue value)
         {
-            var index = IndexOfKey(dic, key);
+            var keys = dic[0];
+            var values = dic[1];
+
+            var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
-                UdonList.Add(dic, key);
-                UdonList.Add(dic, value);
+                UdonList.Add(keys, key);
+                UdonList.Add(values, value);
             }
             else
             {
@@ -94,78 +111,61 @@ namespace Koyashiro.UdonDictionary.Core
             }
         }
 
-        public static void Clear(object[] dic)
+        public static void Clear(object[][] dic)
         {
-            UdonList.Clear(dic);
+            var keys = dic[0];
+            var values = dic[1];
+
+            UdonList.Clear(keys);
+            UdonList.Clear(values);
         }
 
-        public static bool ContainsKey<TKey>(object[] dic, TKey key)
+        public static bool ContainsKey<TKey>(object[][] dic, TKey key)
         {
-            return IndexOfKey(dic, key) != -1;
+            var keys = dic[0];
+
+            return UdonList.IndexOf(keys, key) != -1;
         }
 
-        public static bool ContainsValue<TValue>(object[] dic, TValue value)
+        public static bool ContainsValue<TValue>(object[][] dic, TValue value)
         {
-            return IndexOfValue(dic, value) != -1;
+            var values = dic[1];
+
+            return UdonList.IndexOf(values, value) != -1;
         }
 
-        public static bool Remove<TKey>(object[] dic, TKey key)
+        public static bool Remove<TKey>(object[][] dic, TKey key)
         {
-            var index = IndexOfKey(dic, key);
+            var keys = dic[0];
+            var values = dic[1];
+
+            var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
                 return false;
             }
 
-            UdonList.RemoveAt(dic, index);
-            UdonList.RemoveAt(dic, index + 1);
+            UdonList.RemoveAt(keys, index);
+            UdonList.RemoveAt(values, index);
 
             return true;
         }
 
-        public static bool TryGetValue<TKey, TValue>(object[] dic, TKey key, out TValue value)
+        public static bool TryGetValue<TKey, TValue>(object[][] dic, TKey key, out TValue value)
         {
-            var index = IndexOfKey(dic, key);
+            var keys = dic[0];
+            var values = dic[1];
+
+            var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
                 value = default;
                 return false;
             }
 
-            value = UdonList.GetItem<TValue>(dic, index);
+            value = UdonList.GetItem<TValue>(values, index);
+
             return true;
-        }
-
-        private static int IndexOfKey<TKey>(object[] dic, TKey key)
-        {
-            var count = UdonList.Count(dic) / 2;
-            for (var i = 0; i < count; i++)
-            {
-                var k = UdonList.GetItem<TKey>(dic, 2 * i);
-
-                if (object.Equals(key, k))
-                {
-                    return 2 * i;
-                }
-            }
-
-            return -1;
-        }
-
-        private static int IndexOfValue<TValue>(object[] dic, TValue value)
-        {
-            var count = UdonList.Count(dic) / 2;
-            for (var i = 0; i < count; i++)
-            {
-                var v = UdonList.GetItem<TValue>(dic, 2 * i + 1);
-
-                if (object.Equals(value, v))
-                {
-                    return 2 * i + 1;
-                }
-            }
-
-            return -1;
         }
     }
 }

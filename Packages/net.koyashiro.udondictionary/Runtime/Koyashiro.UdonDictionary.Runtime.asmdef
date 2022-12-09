@@ -3,7 +3,7 @@
     "references": [
         "UdonSharp.Runtime",
         "Koyashiro.UdonException.Runtime",
-        "Koyashiro.UdonList.Runtime"
+        "Koyashiro.UdonList"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

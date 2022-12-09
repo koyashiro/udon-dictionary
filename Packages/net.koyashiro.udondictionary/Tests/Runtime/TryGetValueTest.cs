@@ -9,23 +9,28 @@ namespace Koyashiro.UdonDictionary.Tests
     {
         public void Start()
         {
-            var dic = (UdonDictionary)(object)(new object[] { new object[] { new object[] { "first", 1 }, new object[] { "second", 2 }, new object[] { "third", 3 }, new object[] { "fourth", 4 }, new object[] { "fifth", 5 }, null, null, null }, 5 });
-            object value;
+            var dic = (UdonDictionary<string, int>)(object)(new object[2][] {
+                new object[] { new string[] { "first", "second", "third", "fourth", "fifth" }, 5, typeof(string) },
+                new object[] { new int[] { 1, 2, 3, 4, 5 }, 5, typeof(int) } });
 
-            Assert.True(dic.TryGetValue("first", out value));
-            Assert.Equal(1, value);
+            int value;
 
-            Assert.True(dic.TryGetValue("second", out value));
-            Assert.Equal(2, value);
+            Assert.True(dic.TryGetValue("first", out value), this);
+            Assert.Equal(1, value, this);
 
-            Assert.True(dic.TryGetValue("third", out value));
-            Assert.Equal(3, value);
+            Assert.True(dic.TryGetValue("second", out value), this);
+            Assert.Equal(2, value, this);
 
-            Assert.True(dic.TryGetValue("fourth", out value));
-            Assert.Equal(4, value);
+            Assert.True(dic.TryGetValue("third", out value), this);
+            Assert.Equal(3, value, this);
 
-            Assert.True(dic.TryGetValue("fifth", out value));
-            Assert.Equal(5, value);
+            Assert.True(dic.TryGetValue("fourth", out value), this);
+            Assert.Equal(4, value, this);
+
+            Assert.True(dic.TryGetValue("fifth", out value), this);
+            Assert.Equal(5, value, this);
+
+            Assert.False(dic.TryGetValue("sixth", out value), this);
         }
     }
 }

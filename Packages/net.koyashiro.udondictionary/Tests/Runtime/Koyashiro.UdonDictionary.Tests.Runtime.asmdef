@@ -3,7 +3,8 @@
     "references": [
         "UdonSharp.Runtime",
         "Koyashiro.UdonTest.Runtime",
-        "Koyashiro.UdonDictionary.Runtime"
+        "Koyashiro.UdonDictionary.Runtime",
+        "Koyashiro.UdonTest"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
