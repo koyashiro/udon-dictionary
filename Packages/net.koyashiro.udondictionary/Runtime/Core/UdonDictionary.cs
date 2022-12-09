@@ -25,8 +25,8 @@ namespace Koyashiro.UdonDictionary.Core
 
         //public static object[] GetKeyValuePair<TKey, TValue>(object[] dic, int index)
         //{
-        //    var keys = dic[0];
-        //    var values = dic[1];
+        //    var keys = (object[])dic[0];
+        //    var values = (object[])dic[1];
         //
         //    var key = UdonList.GetItem<TKey>(keys, index);
         //    var item = UdonList.GetItem<TValue>(values, index);
@@ -36,7 +36,7 @@ namespace Koyashiro.UdonDictionary.Core
 
         //public static TKey GetKey<TKey>(object[] dic, int index)
         //{
-        //    var keys = dic[0];
+        //    var keys = (object[])dic[0];
         //
         //    return UdonList.GetItem<TKey>(keys, index);
         //}
