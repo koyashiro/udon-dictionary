@@ -34,12 +34,12 @@ namespace Koyashiro.UdonDictionary.Core
         //    return new object[] { key, item };
         //}
 
-        public static TKey GetKey<TKey>(object[][] dic, int index)
-        {
-            var keys = dic[0];
-        
-            return UdonList.GetItem<TKey>(keys, index);
-        }
+        //public static TKey GetKey<TKey>(object[][] dic, int index)
+        //{
+        //    var keys = dic[0];
+        //
+        //    return UdonList.GetItem<TKey>(keys, index);
+        //}
 
         public static TValue GetValue<TKey, TValue>(object[][] dic, TKey key)
         {

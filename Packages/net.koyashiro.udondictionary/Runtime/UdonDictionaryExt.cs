@@ -7,10 +7,10 @@ namespace Koyashiro.UdonDictionary
         //    return Core.UdonDictionary.GetKeyValuePair<TKey, TValue>(dic.AsObjectArrays(), index);
         //}
 
-        public static TKey GetKey<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
-        {
-            return Core.UdonDictionary.GetKey<TKey>(dic.AsObjectArrays(), index);
-        }
+        //public static TKey GetKey<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
+        //{
+        //    return Core.UdonDictionary.GetKey<TKey>(dic.AsObjectArrays(), index);
+        //}
 
         public static TValue GetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
