@@ -4,72 +4,67 @@ namespace Koyashiro.UdonDictionary
     {
         //public static object[] GetKeyValuePair<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
         //{
-        //    return Core.UdonDictionary.GetKeyValuePair<TKey, TValue>(dic.AsObjectArrays(), index);
+        //    return Core.UdonDictionary.GetKeyValuePair<TKey, TValue>((object[])(object)dic, index);
         //}
 
         //public static TKey GetKey<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
         //{
-        //    return Core.UdonDictionary.GetKey<TKey>(dic.AsObjectArrays(), index);
+        //    return Core.UdonDictionary.GetKey<TKey>((object[])(object)dic, index);
         //}
 
         public static TValue GetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
-            return Core.UdonDictionary.GetValue<TKey, TValue>(dic.AsObjectArrays(), key);
+            return Core.UdonDictionary.GetValue<TKey, TValue>((object[])(object)dic, key);
         }
 
         public static void SetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)
         {
-            Core.UdonDictionary.SetValue(dic.AsObjectArrays(), key, value);
+            Core.UdonDictionary.SetValue((object[])(object)dic, key, value);
         }
 
         public static int Count<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
         {
-            return Core.UdonDictionary.Count(dic.AsObjectArrays());
+            return Core.UdonDictionary.Count((object[])(object)dic);
         }
 
         public static TKey[] Keys<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
         {
-            return Core.UdonDictionary.Keys<TKey>(dic.AsObjectArrays());
+            return Core.UdonDictionary.Keys<TKey>((object[])(object)dic);
         }
 
         public static TValue[] Values<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
         {
-            return Core.UdonDictionary.Values<TValue>(dic.AsObjectArrays());
+            return Core.UdonDictionary.Values<TValue>((object[])(object)dic);
         }
 
         public static void Add<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)
         {
-            Core.UdonDictionary.Add(dic.AsObjectArrays(), key, value);
+            Core.UdonDictionary.Add((object[])(object)dic, key, value);
         }
 
         public static void Clear<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
         {
-            Core.UdonDictionary.Clear(dic.AsObjectArrays());
+            Core.UdonDictionary.Clear((object[])(object)dic);
         }
 
         public static bool ContainsKey<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
-            return Core.UdonDictionary.ContainsKey(dic.AsObjectArrays(), key);
+            return Core.UdonDictionary.ContainsKey((object[])(object)dic, key);
         }
 
         public static bool ContainsValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TValue value)
         {
-            return Core.UdonDictionary.ContainsValue(dic.AsObjectArrays(), value);
+            return Core.UdonDictionary.ContainsValue((object[])(object)dic, value);
         }
 
         public static bool Remove<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
-            return Core.UdonDictionary.Remove(dic.AsObjectArrays(), key);
+            return Core.UdonDictionary.Remove((object[])(object)dic, key);
         }
 
         public static bool TryGetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, out TValue value)
         {
-            return Core.UdonDictionary.TryGetValue(dic.AsObjectArrays(), key, out value);
-        }
-
-        private static object[][] AsObjectArrays<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
-        {
-            return (object[][])(object)dic;
+            return Core.UdonDictionary.TryGetValue((object[])(object)dic, key, out value);
         }
     }
 }
