@@ -12,7 +12,7 @@ namespace Koyashiro.UdonDictionary.Core
             var keys = UdonList.New<TKey>();
             var values = UdonList.New<TValue>();
 
-            return new object[2][] { keys, values };
+            return new object[][] { keys, values };
         }
 
         public static object[][] New<TKey, TValue>(int capacity)
@@ -20,7 +20,7 @@ namespace Koyashiro.UdonDictionary.Core
             var keys = UdonList.New<TKey>(capacity);
             var values = UdonList.New<TValue>(capacity);
 
-            return new object[2][] { keys, values };
+            return new object[][] { keys, values };
         }
 
         //public static object[] GetKeyValuePair<TKey, TValue>(object[][] dic, int index)
