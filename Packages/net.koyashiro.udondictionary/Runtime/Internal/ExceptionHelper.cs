@@ -12,13 +12,13 @@ namespace Koyashiro.UdonDictionary.Internal
 
         public static void ThrowArgumentException(string message)
         {
-            LogErrorMessage("System.ArgumentException", message);
+            LogErrorMessage(typeof(System.ArgumentException).FullName, message);
             Panic();
         }
 
         public static void ThrowKeyNotFoundException()
         {
-            LogErrorMessage("System.Collections.Generic.KeyNotFoundException", "The given key was not present in the dictionary.");
+            LogErrorMessage(typeof(System.Collections.Generic.KeyNotFoundException).FullName, "The given key was not present in the dictionary.");
             Panic();
         }
 
