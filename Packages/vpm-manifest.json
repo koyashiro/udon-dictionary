@@ -58,11 +58,9 @@
       }
     },
     "net.koyashiro.udonlist": {
-      "version": "0.8.1",
+      "version": "0.12.3",
       "dependencies": {
-        "com.vrchat.udonsharp": "1.1.5",
-        "net.koyashiro.udonexception": "0.2.0",
-        "net.koyashiro.udontest": "0.1.1"
+        "com.vrchat.udonsharp": "1.1.6"
       }
     }
   }
