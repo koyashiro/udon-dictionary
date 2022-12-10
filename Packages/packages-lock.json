@@ -191,12 +191,6 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "net.koyashiro.udonexception": {
-      "version": "file:net.koyashiro.udonexception",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "net.koyashiro.udonlist": {
       "version": "file:net.koyashiro.udonlist",
       "depth": 0,

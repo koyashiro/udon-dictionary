@@ -1,8 +1,8 @@
 using System;
+using Koyashiro.UdonDictionary.Internal;
 
 namespace Koyashiro.UdonDictionary.Core
 {
-    using Koyashiro.UdonException;
     using Koyashiro.UdonList.Core;
 
     public static class UdonDictionary
@@ -48,7 +48,7 @@ namespace Koyashiro.UdonDictionary.Core
             var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
-                UdonException.ThrowKeyNotFoundException();
+                ExceptionHelper.ThrowKeyNotFoundException();
             }
 
             var values = (object[])dic[1];
@@ -107,7 +107,7 @@ namespace Koyashiro.UdonDictionary.Core
             }
             else
             {
-                UdonException.ThrowArgumentException("An item with the same key has already been added.");
+                ExceptionHelper.ThrowArgumentException("An item with the same key has already been added.");
             }
         }
 
