@@ -13,7 +13,7 @@
       "version": "0.1.0"
     },
     "net.koyashiro.udontest": {
-      "version": "0.1.0"
+      "version": "0.4.1"
     },
     "net.koyashiro.udonlist": {
       "version": "0.6.0"
@@ -52,9 +52,9 @@
       }
     },
     "net.koyashiro.udontest": {
-      "version": "0.1.1",
+      "version": "0.4.1",
       "dependencies": {
-        "com.vrchat.udonsharp": "1.1.5"
+        "com.vrchat.udonsharp": "1.1.6"
       }
     },
     "net.koyashiro.udonlist": {
