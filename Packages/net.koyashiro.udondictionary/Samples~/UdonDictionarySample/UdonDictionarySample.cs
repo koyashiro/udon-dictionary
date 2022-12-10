@@ -6,7 +6,7 @@ public class UdonDictionarySample : UdonSharpBehaviour
 {
     public void Start()
     {
-        var dic = UdonDictionary.New(); // {}
+        var dic = UdonDictionary<string, int>.New(); // {}
 
         dic.SetValue("first", 1); // { first: 1 }
         dic.SetValue("second", 2); // { first: 1, second: 2 }
