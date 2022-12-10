@@ -4,16 +4,16 @@ using UdonSharp;
 namespace Koyashiro.UdonDictionary
 {
     [AddComponentMenu("")]
-    public class UdonDictionary : UdonSharpBehaviour
+    public class UdonDictionary<TKey, TValue> : UdonSharpBehaviour
     {
-        public static UdonDictionary New()
+        public static UdonDictionary<TKey, TValue> New()
         {
-            return (UdonDictionary)(object)Core.UdonDictionary.New();
+            return (UdonDictionary<TKey, TValue>)(object)Core.UdonDictionary.New<TKey, TValue>();
         }
 
-        public static UdonDictionary New(int capacity)
+        public static UdonDictionary<TKey, TValue> New(int capacity)
         {
-            return (UdonDictionary)(object)Core.UdonDictionary.New(capacity);
+            return (UdonDictionary<TKey, TValue>)(object)Core.UdonDictionary.New<TKey, TValue>(capacity);
         }
     }
 }
