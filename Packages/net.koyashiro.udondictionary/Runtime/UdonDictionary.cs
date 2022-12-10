@@ -1,6 +1,5 @@
 using UnityEngine;
 using UdonSharp;
-using YamlDotNet.Core.Tokens;
 
 namespace Koyashiro.UdonDictionary
 {

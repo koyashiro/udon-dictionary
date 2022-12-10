@@ -14,7 +14,7 @@ namespace Koyashiro.UdonDictionary
 
         public static TValue GetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
-            return Core.UdonDictionary.GetValue<TKey, TValue>((object[])(object)dic, key);
+            return Core.UdonDictionary.GetValue<TValue>((object[])(object)dic, key);
         }
 
         public static void SetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)

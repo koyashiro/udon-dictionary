@@ -41,7 +41,7 @@ namespace Koyashiro.UdonDictionary.Core
         //    return UdonList.GetItem<TKey>(keys, index);
         //}
 
-        public static TValue GetValue<TKey, TValue>(object[] dic, TKey key)
+        public static TValue GetValue<TValue>(object[] dic, object key)
         {
             var keys = (object[])dic[0];
 
@@ -56,7 +56,7 @@ namespace Koyashiro.UdonDictionary.Core
             return UdonList.GetItem<TValue>(values, index);
         }
 
-        public static void SetValue<TKey, TValue>(object[] dic, TKey key, TValue value)
+        public static void SetValue(object[] dic, object key, object value)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];
@@ -94,7 +94,7 @@ namespace Koyashiro.UdonDictionary.Core
             return UdonList.ToArray<TValue>(values);
         }
 
-        public static void Add<TKey, TValue>(object[] dic, TKey key, TValue value)
+        public static void Add(object[] dic, object key, object value)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];
@@ -120,21 +120,21 @@ namespace Koyashiro.UdonDictionary.Core
             UdonList.Clear(values);
         }
 
-        public static bool ContainsKey<TKey>(object[] dic, TKey key)
+        public static bool ContainsKey(object[] dic, object key)
         {
             var keys = (object[])dic[0];
 
             return UdonList.IndexOf(keys, key) != -1;
         }
 
-        public static bool ContainsValue<TValue>(object[] dic, TValue value)
+        public static bool ContainsValue(object[] dic, object value)
         {
             var values = (object[])dic[1];
 
             return UdonList.IndexOf(values, value) != -1;
         }
 
-        public static bool Remove<TKey>(object[] dic, TKey key)
+        public static bool Remove(object[] dic, object key)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];
@@ -151,7 +151,7 @@ namespace Koyashiro.UdonDictionary.Core
             return true;
         }
 
-        public static bool TryGetValue<TKey, TValue>(object[] dic, TKey key, out TValue value)
+        public static bool TryGetValue<TValue>(object[] dic, object key, out TValue value)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];
