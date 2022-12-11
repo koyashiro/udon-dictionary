@@ -15,22 +15,22 @@ namespace Koyashiro.UdonDictionary.Tests
 
             int value;
 
-            Assert.True(dic.TryGet("first", out value), this);
+            Assert.True(dic.TryGetValue("first", out value), this);
             Assert.Equal(1, value, this);
 
-            Assert.True(dic.TryGet("second", out value), this);
+            Assert.True(dic.TryGetValue("second", out value), this);
             Assert.Equal(2, value, this);
 
-            Assert.True(dic.TryGet("third", out value), this);
+            Assert.True(dic.TryGetValue("third", out value), this);
             Assert.Equal(3, value, this);
 
-            Assert.True(dic.TryGet("fourth", out value), this);
+            Assert.True(dic.TryGetValue("fourth", out value), this);
             Assert.Equal(4, value, this);
 
-            Assert.True(dic.TryGet("fifth", out value), this);
+            Assert.True(dic.TryGetValue("fifth", out value), this);
             Assert.Equal(5, value, this);
 
-            Assert.False(dic.TryGet("sixth", out value), this);
+            Assert.False(dic.TryGetValue("sixth", out value), this);
         }
     }
 }

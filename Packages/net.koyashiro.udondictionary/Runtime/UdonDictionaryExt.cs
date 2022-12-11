@@ -62,9 +62,9 @@ namespace Koyashiro.UdonDictionary
             return Core.UdonDictionary.Remove((object[])(object)dic, key);
         }
 
-        public static bool TryGet<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, out TValue value)
+        public static bool TryGetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, out TValue value)
         {
-            return Core.UdonDictionary.TryGet((object[])(object)dic, key, out value);
+            return Core.UdonDictionary.TryGetValue((object[])(object)dic, key, out value);
         }
     }
 }

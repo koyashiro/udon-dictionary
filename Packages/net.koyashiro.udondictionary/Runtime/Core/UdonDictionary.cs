@@ -152,7 +152,7 @@ namespace Koyashiro.UdonDictionary.Core
             return true;
         }
 
-        public static bool TryGet<TValue>(object[] dic, object key, out TValue value)
+        public static bool TryGetValue<TValue>(object[] dic, object key, out TValue value)
         {
             var keys = (object[])dic[0];
 
