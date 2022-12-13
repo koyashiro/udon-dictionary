@@ -27,6 +27,6 @@
   "url": "https://github.com/koyashiro/udon-json/releases/download/v0.7.0/net.koyashiro.udondictionary-0.7.0.zip",
   "vpmDependencies": {
     "com.vrchat.udonsharp": "1.1.6",
-    "net.koyashiro.udonlist": "0.13.0"
+    "net.koyashiro.udonlist": "0.14.0"
   }
 }

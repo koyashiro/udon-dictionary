@@ -53,7 +53,7 @@ namespace Koyashiro.UdonDictionary.Core
 
             var values = (object[])dic[1];
 
-            return UdonList.Get<TValue>(values, index);
+            return UdonList.GetValue<TValue>(values, index);
         }
 
         public static void Set(object[] dic, object key, object value)
@@ -69,7 +69,7 @@ namespace Koyashiro.UdonDictionary.Core
             }
             else
             {
-                UdonList.Set(values, index, value);
+                UdonList.SetValue(values, index, value);
             }
         }
 
@@ -165,7 +165,7 @@ namespace Koyashiro.UdonDictionary.Core
 
             var values = (object[])dic[1];
 
-            value = UdonList.Get<TValue>(values, index);
+            value = UdonList.GetValue<TValue>(values, index);
 
             return true;
         }
