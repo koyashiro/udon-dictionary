@@ -41,7 +41,7 @@ namespace Koyashiro.UdonDictionary.Core
         //    return UdonList.GetItem<TKey>(keys, index);
         //}
 
-        public static TValue Get<TValue>(object[] dic, object key)
+        public static TValue GetValue<TValue>(object[] dic, object key)
         {
             var keys = (object[])dic[0];
 
@@ -56,7 +56,7 @@ namespace Koyashiro.UdonDictionary.Core
             return UdonList.GetValue<TValue>(values, index);
         }
 
-        public static void Set(object[] dic, object key, object value)
+        public static void SetValue(object[] dic, object key, object value)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];

@@ -13,11 +13,11 @@ namespace Koyashiro.UdonDictionary.Tests
                 new object[] { new string[] { "first", "second", "third", "fourth", "fifth" }, 5, typeof(string) },
                 new object[] { new int[] { 1, 2, 3, 4, 5 }, 5, typeof(int) } });
 
-            Assert.Equal(1, dic.Get("first"), this);
-            Assert.Equal(2, dic.Get("second"), this);
-            Assert.Equal(3, dic.Get("third"), this);
-            Assert.Equal(4, dic.Get("fourth"), this);
-            Assert.Equal(5, dic.Get("fifth"), this);
+            Assert.Equal(1, dic.GetValue("first"), this);
+            Assert.Equal(2, dic.GetValue("second"), this);
+            Assert.Equal(3, dic.GetValue("third"), this);
+            Assert.Equal(4, dic.GetValue("fourth"), this);
+            Assert.Equal(5, dic.GetValue("fifth"), this);
         }
     }
 }
