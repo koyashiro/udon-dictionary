@@ -1,7 +1,7 @@
 {
   "name": "net.koyashiro.udondictionary",
   "displayName": "UdonDictionary",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Dictionary implementation for UdonSharp.",
   "homepage": "https://github.com/koyashiro/udon-dictionary",
   "bugs": {
@@ -24,7 +24,7 @@
       "path": "samples~/UdonDictionarySample"
     }
   ],
-  "url": "https://github.com/koyashiro/udon-json/releases/download/v0.7.0/net.koyashiro.udondictionary-0.7.0.zip",
+  "url": "https://github.com/koyashiro/udon-json/releases/download/v0.8.0/net.koyashiro.udondictionary-0.8.0.zip",
   "vpmDependencies": {
     "com.vrchat.udonsharp": "1.1.6",
     "net.koyashiro.udonlist": "0.14.0"
