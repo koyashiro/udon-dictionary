@@ -41,7 +41,7 @@ namespace Koyashiro.UdonDictionary.Core
         //    return UdonList.GetItem<TKey>(keys, index);
         //}
 
-        public static TValue GetValue<TValue>(object[] dic, object key)
+        public static TValue Get<TValue>(object[] dic, object key)
         {
             var keys = (object[])dic[0];
 
@@ -53,10 +53,10 @@ namespace Koyashiro.UdonDictionary.Core
 
             var values = (object[])dic[1];
 
-            return UdonList.GetItem<TValue>(values, index);
+            return UdonList.Get<TValue>(values, index);
         }
 
-        public static void SetValue(object[] dic, object key, object value)
+        public static void Set(object[] dic, object key, object value)
         {
             var keys = (object[])dic[0];
             var values = (object[])dic[1];
@@ -69,7 +69,7 @@ namespace Koyashiro.UdonDictionary.Core
             }
             else
             {
-                UdonList.SetItem(values, index, value);
+                UdonList.Set(values, index, value);
             }
         }
 
@@ -137,13 +137,14 @@ namespace Koyashiro.UdonDictionary.Core
         public static bool Remove(object[] dic, object key)
         {
             var keys = (object[])dic[0];
-            var values = (object[])dic[1];
 
             var index = UdonList.IndexOf(keys, key);
             if (index == -1)
             {
                 return false;
             }
+
+            var values = (object[])dic[1];
 
             UdonList.RemoveAt(keys, index);
             UdonList.RemoveAt(values, index);
@@ -154,7 +155,6 @@ namespace Koyashiro.UdonDictionary.Core
         public static bool TryGetValue<TValue>(object[] dic, object key, out TValue value)
         {
             var keys = (object[])dic[0];
-            var values = (object[])dic[1];
 
             var index = UdonList.IndexOf(keys, key);
             if (index == -1)
@@ -163,7 +163,9 @@ namespace Koyashiro.UdonDictionary.Core
                 return false;
             }
 
-            value = UdonList.GetItem<TValue>(values, index);
+            var values = (object[])dic[1];
+
+            value = UdonList.Get<TValue>(values, index);
 
             return true;
         }

@@ -12,14 +12,14 @@ namespace Koyashiro.UdonDictionary
         //    return Core.UdonDictionary.GetKey<TKey>((object[])(object)dic, index);
         //}
 
-        public static TValue GetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
+        public static TValue Get<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
-            return Core.UdonDictionary.GetValue<TValue>((object[])(object)dic, key);
+            return Core.UdonDictionary.Get<TValue>((object[])(object)dic, key);
         }
 
-        public static void SetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)
+        public static void Set<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)
         {
-            Core.UdonDictionary.SetValue((object[])(object)dic, key, value);
+            Core.UdonDictionary.Set((object[])(object)dic, key, value);
         }
 
         public static int Count<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
