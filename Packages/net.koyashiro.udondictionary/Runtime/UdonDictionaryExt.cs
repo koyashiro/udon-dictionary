@@ -2,16 +2,6 @@ namespace Koyashiro.UdonDictionary
 {
     public static class UdonDictionaryExt
     {
-        //public static object[] GetKeyValuePair<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
-        //{
-        //    return Core.UdonDictionary.GetKeyValuePair<TKey, TValue>((object[])(object)dic, index);
-        //}
-
-        //public static TKey GetKey<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, int index)
-        //{
-        //    return Core.UdonDictionary.GetKey<TKey>((object[])(object)dic, index);
-        //}
-
         public static TValue GetValue<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key)
         {
             return Core.UdonDictionary.GetValue<TValue>((object[])(object)dic, key);
