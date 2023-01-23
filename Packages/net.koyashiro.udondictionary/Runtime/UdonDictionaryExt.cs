@@ -27,6 +27,11 @@ namespace Koyashiro.UdonDictionary
             return Core.UdonDictionary.Values<TValue>((object[])(object)dic);
         }
 
+        public static UdonKeyValuePair<TKey, TValue>[] KeyValuePairs<TKey, TValue>(this UdonDictionary<TKey, TValue> dic)
+        {
+            return Core.UdonDictionary.KeyValuePairs<TKey, TValue>((object[])(object)dic);
+        }
+
         public static void Add<TKey, TValue>(this UdonDictionary<TKey, TValue> dic, TKey key, TValue value)
         {
             Core.UdonDictionary.Add((object[])(object)dic, key, value);

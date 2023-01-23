@@ -76,6 +76,24 @@ namespace Koyashiro.UdonDictionary.Core
             return UdonList.ToArray<TValue>(values);
         }
 
+        public static UdonKeyValuePair<TKey, TValue>[] KeyValuePairs<TKey, TValue>(object[] dic)
+        {
+            var keys = (object[])dic[0];
+            var values = (object[])dic[1];
+            var count = UdonList.Count(keys);
+
+            var pairs = Array.CreateInstance(typeof(object), count);
+            for (var i = 0; i < count; i++)
+            {
+                var key = UdonList.GetValue<TKey>(keys, i);
+                var value = UdonList.GetValue<TValue>(values, i);
+                var pair = new object[2] { key, value };
+                pairs.SetValue(pair, i);
+            }
+
+            return (UdonKeyValuePair<TKey, TValue>[])pairs;
+        }
+
         public static void Add(object[] dic, object key, object value)
         {
             var keys = (object[])dic[0];
