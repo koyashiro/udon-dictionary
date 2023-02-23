@@ -13,7 +13,7 @@
       "version": "0.4.2"
     },
     "net.koyashiro.udonlist": {
-      "version": "0.14.1"
+      "version": "0.14.2"
     }
   },
   "locked": {
@@ -49,9 +49,9 @@
       }
     },
     "net.koyashiro.udonlist": {
-      "version": "0.14.1",
+      "version": "0.14.2",
       "dependencies": {
-        "com.vrchat.udonsharp": "1.1.6"
+        "com.vrchat.udonsharp": "1.1.7"
       }
     }
   }
