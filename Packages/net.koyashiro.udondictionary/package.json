@@ -28,5 +28,6 @@
   "vpmDependencies": {
     "com.vrchat.udonsharp": "1.1.7",
     "net.koyashiro.udonlist": "0.14.2"
-  }
+  },
+  "repo": "https://vpm.koyashiro.net/repos.json"
 }
