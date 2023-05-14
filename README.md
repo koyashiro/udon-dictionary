@@ -1,3 +1,9 @@
+# ⚠️ ARCHIVED ⚠️
+
+This repository has been archived following the launch of [DataDictionary](https://docs.vrchat.com/docs/data-dictionaries). We strongly recommend using [DataDictionary](https://docs.vrchat.com/docs/data-dictionaries) for future projects.
+
+If you're in need of a generic version of DataList, consider using the [GenericDataContainer](https://github.com/koyashiro/generic-data-container) repository as a potential resource.
+
 # UdonDictionary
 
 Dictionary implementation for UdonSharp.
